@@ -1,0 +1,10 @@
+################################################################################
+# Haxe Example Build Script
+# author: Andras Csizmadia <www.vpmedia.eu>      
+# version: 1.0.0
+################################################################################
+
+-cmd cd example
+-cmd haxelib run openfl build "Main.xml" flash
+-cmd haxelib run openfl build "Main.xml" html5
+-cmd cd ..
