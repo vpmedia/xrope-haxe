@@ -1,21 +1,21 @@
--cmd haxelib run openfl build "XRopeAlignExample.xml" flash
+-cmd haxelib run lime build "XRopeAlignExample.xml" flash
 --next
--cmd haxelib run openfl build "XRopeFormExample.xml" flash
+-cmd haxelib run lime build "XRopeFormExample.xml" flash
 --next
--cmd haxelib run openfl build "XRopeGridExample.xml" flash
+-cmd haxelib run lime build "XRopeGridExample.xml" flash
 --next
--cmd haxelib run openfl build "XRopeHBoxExample.xml" flash
+-cmd haxelib run lime build "XRopeHBoxExample.xml" flash
 --next
--cmd haxelib run openfl build "XRopeHFillLineExample.xml" flash
+-cmd haxelib run lime build "XRopeHFillLineExample.xml" flash
 --next
--cmd haxelib run openfl build "XRopeHLineExample.xml" flash
+-cmd haxelib run lime build "XRopeHLineExample.xml" flash
 --next
--cmd haxelib run openfl build "XRopeHMultiLineExample.xml" flash
+-cmd haxelib run lime build "XRopeHMultiLineExample.xml" flash
 --next
--cmd haxelib run openfl build "XRopeVBoxExample.xml" flash
+-cmd haxelib run lime build "XRopeVBoxExample.xml" flash
 --next
--cmd haxelib run openfl build "XRopeVFillLineExample.xml" flash
+-cmd haxelib run lime build "XRopeVFillLineExample.xml" flash
 --next
--cmd haxelib run openfl build "XRopeVLineExample.xml" flash
+-cmd haxelib run lime build "XRopeVLineExample.xml" flash
 --next
--cmd haxelib run openfl build "XRopeVMultiLineExample.xml" flash
+-cmd haxelib run lime build "XRopeVMultiLineExample.xml" flash

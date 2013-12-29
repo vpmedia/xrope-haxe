@@ -10,7 +10,7 @@
 -swf bin/library.swc
 -swf-version 11.7
 -cp src
--lib openfl
+-lib lime
 --macro include("xrope")
 --flash-strict
 -debug

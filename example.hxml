@@ -5,6 +5,6 @@
 ################################################################################
 
 -cmd cd example
--cmd haxelib run openfl build "Main.xml" flash
--cmd haxelib run openfl build "Main.xml" html5
+-cmd haxelib run lime build "Main.xml" flash
+-cmd haxelib run lime build "Main.xml" html5
 -cmd cd ..
