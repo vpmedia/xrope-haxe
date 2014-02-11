@@ -15,11 +15,15 @@ before_script:
     - sudo apt-get install haxe -y
     - mkdir -p ~/.haxe/lib
     - echo ~/.haxe/lib | haxelib setup
+    - haxelib install lime || true
+    - haxelib install lime-tools || true
+    - haxelib install hxcpp || true
+    - haxelib install hxlibc || true
+    - haxelib install hxtools || true
     - haxelib install openfl || true
-    - haxelib install openfl-tools || true
+    - haxelib install openfl-html5-dom || true
     - haxelib install openfl-native || true
-    - haxelib install openfl-html5 || true
-    - haxelib install openfl-compatibility || true
+    - haxelib install openfl-tools || true
     - haxelib install munit || true
     - haxelib install hamcrest || true
     - haxelib install box2d || true
