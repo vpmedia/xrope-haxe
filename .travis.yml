@@ -6,8 +6,6 @@ language: java
 before_install:
     - "export DISPLAY=:99.0"
     - "sh -e /etc/init.d/xvfb start"
-
-before_script:
     - sudo add-apt-repository ppa:eyecreate/haxe -y
     - sudo apt-get update -y
     - sudo apt-get install haxe -y
@@ -29,9 +27,4 @@ before_script:
     - haxelib install tilelayer || true
     - haxelib install hxsl || true
     - haxe -version
-    - haxelib run openfl
-
-after_script:
-    - ls
-
-script: gradle
+    - haxelib run lime
