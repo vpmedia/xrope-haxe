@@ -36,82 +36,76 @@ version = '1.0-SNAPSHOT'
 group = 'hu.vpmedia.haxe'
 
 ////////////////////
-// Sub projects
+// Init Cycle
 ////////////////////
 
-subprojects {
-    ////////////////////
-    // Init Cycle
-    ////////////////////
-
-    // Clean target dirs
-    task (clean, type: Delete) << {
-        file('bin').deleteDir() 
-        file('build').deleteDir()
-    }
-
-    // Create target dirs
-    task (init) << {
-        file('bin').mkdirs()
-        file('build').mkdirs()
-    }
-
-    ////////////////////
-    // Compile Cycle
-    ////////////////////
-
-    // Compile project to SWC
-    task (compile, type:Exec) {
-      ext.outputFile = file('bin/' + project.name + '.swc')
-      if (!outputFile.isFile()) {
-        outputFile.parentFile.mkdirs()
-      }
-      commandLine = ['haxe', 'build.hxml']
-    } 
-     
-    ////////////////////
-    // Test Cycle
-    ////////////////////
-
-    task (test) {
-    } 
-
-    // Generate unit test suites
-    task (testGen, type:Exec) {
-      commandLine = ['haxelib', 'run', 'munit', 'gen']
-    }
-
-    // Compile unit tests
-    task (testCompile, type:Exec) {
-      commandLine = ['haxe', 'test.hxml']
-    } 
-
-    // Generate report from compiled unit tests
-    task (testReport, type:Exec) {
-      commandLine = ['haxelib', 'run', 'munit', 'report', 'teamcity']
-    }
-
-    // Run compiled unit tests
-    task (testRun, type:Exec) {
-      commandLine = ['haxelib', 'run', 'munit', 'test']
-    }
-
-    test.dependsOn testReport
-    testReport.dependsOn testRun
-    testRun.dependsOn testCompile
-    testCompile.dependsOn testGen
-    
-    ////////////////////
-    // Assemble Cycle
-    ////////////////////
-
-    task (assemble) {
-    } 
-        
-    task (check) {
-    } 
-
-    init.dependsOn clean
-    compile.dependsOn init
-    assemble.dependsOn compile
+// Clean target dirs
+task (clean, type: Delete) << {
+    file('bin').deleteDir() 
+    file('build').deleteDir()
 }
+
+// Create target dirs
+task (init) << {
+    file('bin').mkdirs()
+    file('build').mkdirs()
+}
+
+////////////////////
+// Compile Cycle
+////////////////////
+
+// Compile project to SWC
+task (compile, type:Exec) {
+  ext.outputFile = file('bin/' + project.name + '.swc')
+  if (!outputFile.isFile()) {
+    outputFile.parentFile.mkdirs()
+  }
+  commandLine = ['haxe', 'build.hxml']
+} 
+ 
+////////////////////
+// Test Cycle
+////////////////////
+
+task (test) {
+} 
+
+// Generate unit test suites
+task (testGen, type:Exec) {
+  commandLine = ['haxelib', 'run', 'munit', 'gen']
+}
+
+// Compile unit tests
+task (testCompile, type:Exec) {
+  commandLine = ['haxe', 'test.hxml']
+} 
+
+// Generate report from compiled unit tests
+task (testReport, type:Exec) {
+  commandLine = ['haxelib', 'run', 'munit', 'report', 'teamcity']
+}
+
+// Run compiled unit tests
+task (testRun, type:Exec) {
+  commandLine = ['haxelib', 'run', 'munit', 'test']
+}
+
+test.dependsOn testReport
+testReport.dependsOn testRun
+testRun.dependsOn testCompile
+testCompile.dependsOn testGen
+
+////////////////////
+// Assemble Cycle
+////////////////////
+
+task (assemble) {
+} 
+    
+task (check) {
+} 
+
+init.dependsOn clean
+compile.dependsOn init
+assemble.dependsOn compile
