@@ -32,7 +32,6 @@
 -swf bin/library.swc
 -swf-version 12.0
 -cp src
--lib lime
 --macro include("xrope")
 --flash-strict
 -debug
