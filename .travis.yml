@@ -52,5 +52,4 @@ before_install:
     - haxelib install nape || true
     - haxelib install tilelayer || true
     - haxelib install hxsl || true
-    - haxe -version
-    - haxelib run lime
+    - haxe build.hxml
