@@ -1,7 +1,10 @@
 #
+# =BEGIN MIT LICENSE
+#
 # The MIT License (MIT)
 #
-# Copyright 2014 Andras Csizmadia (www.vpmedia.eu)
+# Copyright (c) 2012-2014 Andras Csizmadia
+# http://www.vpmedia.eu
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy of
 # this software and associated documentation files (the "Software"), to deal in
@@ -20,22 +23,23 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
+# =END MIT LICENSE
+#
+
+# Author: Andras Csizmadia
 
 git: 
     depth: 1
 
-language: java
+language: objective-c
+#language: java
 
-before_install:
-    - "export DISPLAY=:99.0"
-    - "sh -e /etc/init.d/xvfb start"
-    - sudo add-apt-repository ppa:eyecreate/haxe -y
-    - sudo apt-get update -y
-    - sudo apt-get install haxe -y
-    - mkdir -p ~/.haxe/lib
-    - mkdir -p bin
-    - echo ~/.haxe/lib | haxelib setup
-    - haxelib install munit || true
+os:
+   - osx
+   - linux
+
+install:
+    - ./.travis-install.sh
 
 script:
     - haxe build.hxml
