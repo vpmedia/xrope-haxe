@@ -31,8 +31,8 @@
 git: 
     depth: 1
 
-language: objective-c
-#language: java
+#language: objective-c
+language: java
 
 os:
    - osx
